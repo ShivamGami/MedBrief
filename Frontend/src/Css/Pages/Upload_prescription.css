@@ -1,0 +1,152 @@
+.prescriptionPageWrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem 0.5rem; /* Reduced to sit neatly inside .page-content-wrapper padding */
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.prescriptionPageTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    letter-spacing: -0.025em;
+    /* Subtle text glow matching your theme's headings */
+    text-shadow: 0 2px 10px rgba(124, 58, 237, 0.15);
+}
+
+.prescriptionCardContainer {
+    background: var(--bg-card);
+    border: var(--border-soft);
+    border-radius: 12px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    padding: 2.25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle accent glow line at the top of the form card */
+.prescriptionCardContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-violet-pure), transparent);
+}
+
+.prescriptionFormGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .prescriptionFormRowTwoCol {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+}
+
+.prescriptionFormGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.prescriptionFormLabel {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
+}
+
+.prescriptionFormInput {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.95rem;
+    padding: 0.65rem 0.95rem;
+    border: var(--border-soft);
+    border-radius: 8px;
+    background-color: rgba(5, 5, 8, 0.6); /* Slightly darker translucent input fill */
+    color: var(--text-primary);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.prescriptionFormInput::placeholder {
+    color: var(--text-muted);
+}
+
+.prescriptionFormInput:hover {
+    border-color: rgba(124, 58, 237, 0.4);
+    background-color: rgba(25, 20, 45, 0.2);
+}
+
+.prescriptionFormInput:focus {
+    outline: none;
+    background-color: rgba(10, 10, 15, 0.9);
+    border-color: var(--color-violet-light);
+    box-shadow: 0 0 0 3px var(--color-violet-glow);
+}
+
+/* Fixes calendar icon and text coloring in dark mode default date inputs */
+.prescriptionFormInput[type="date"] {
+    color: var(--text-primary);
+    color-scheme: dark; 
+}
+
+.prescriptionSubmitBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-violet-pure) 0%, #6d28d9 100%);
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1rem;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    width: 100%;
+}
+
+.prescriptionSubmitBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+}
+
+.prescriptionSubmitBtn:active {
+    transform: translateY(1px) scale(0.99);
+}
+
+/* Status Banners customized for Dark Cyber Theme */
+.prescriptionStatusBanner {
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.875rem 1rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border: 1px solid transparent;
+    backdrop-filter: blur(4px);
+}
+
+.prescriptionStatusSuccess {
+    background-color: rgba(22, 101, 52, 0.15);
+    color: #4ade80;
+    border-color: rgba(74, 222, 128, 0.25);
+    box-shadow: 0 0 15px rgba(74, 222, 128, 0.05);
+}
+
+.prescriptionStatusError {
+    background-color: rgba(153, 27, 27, 0.15);
+    color: #f87171;
+    border-color: rgba(248, 113, 113, 0.25);
+    box-shadow: 0 0 15px rgba(248, 113, 113, 0.05);
+}

@@ -1,0 +1,201 @@
+:root {
+  --bg-main: #050508;
+  --bg-surface: #0a0a0f;
+  --bg-card: rgba(15, 15, 25, 0.7);
+  --bg-card-hover: rgba(25, 20, 45, 0.4);
+  
+  --color-violet-pure: #7c3aed;
+  --color-violet-light: #a78bfa;
+  --color-violet-glow: rgba(124, 58, 237, 0.25);
+  --color-violet-soft: rgba(124, 58, 237, 0.08);
+  
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+  --text-muted: rgba(255, 255, 255, 0.45);
+  --text-dark: #4b5563;
+  
+  --border-glow: 1px solid rgba(124, 58, 237, 0.25);
+  --border-soft: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-main);
+}
+
+html, body, #root {
+  background-color: var(--bg-main);
+  min-height: 100%;
+  color: var(--text-primary);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+@keyframes pulseRing {
+  0% { transform: scale(0.8); opacity: 0.6; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+@keyframes popIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes letterIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.06); filter: drop-shadow(0 0 12px var(--color-violet-pure)); }
+}
+
+@keyframes shimmer {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes appointmentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.appMainLayoutContainer {
+  display: flex;
+  flex-direction: row; 
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--bg-main);
+  overflow-x: hidden;
+  
+  --sidebar-width: 260px; 
+  transition: --sidebar-width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.appMainLayoutContainer.sidebar-is-collapsed {
+  --sidebar-width: 78px;
+}
+
+.page-content-wrapper {
+  flex: 1;
+  padding: 2.5rem 2rem;
+  box-sizing: border-box;
+  min-width: 0;
+  background-color: var(--bg-main);
+  
+  margin-left: var(--sidebar-width); 
+  
+  transition: margin-left 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (max-width: 1024px) {
+  .appMainLayoutContainer {
+    --sidebar-width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .appMainLayoutContainer,
+  .appMainLayoutContainer.sidebar-is-collapsed {
+    --sidebar-width: 0px;
+  }
+
+  .page-content-wrapper {
+    padding: 1.5rem 1rem;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.nav-link {
+  background: transparent !important;
+  border: none !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  padding: 0.4rem 0.75rem !important;
+  border-radius: 0.5rem !important;
+  transition: all 0.2s ease-in-out !important;
+  outline: none !important;
+}
+
+.nav-link:hover {
+  color: #c084fc !important;
+  background: rgba(167, 139, 250, 0.08) !important;
+}
+
+.mb-letter {
+  display: inline-block;
+  opacity: 0;
+  animation: letterIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.mb-heart {
+  animation: heartbeat 2.5s ease-in-out infinite;
+}
+
+.mb-intro-pr {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0;
+  animation: pulseRing 3s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+}
+
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.shimmer-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.13), transparent);
+  transform: skewX(-25deg);
+  left: -75%;
+}
+
+.shimmer-btn:hover::after {
+  animation: shimmer 1.2s ease-in-out infinite;
+}
+
+.shimmer-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+}
+
+.appointments-grid-container {
+  display: grid;
+  gap: 2.5rem;
+  animation: appointmentFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

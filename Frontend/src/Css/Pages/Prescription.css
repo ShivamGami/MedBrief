@@ -1,0 +1,332 @@
+.rx-page-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #ffffff;
+  gap: 1.5rem;
+}
+
+.rx-page-header {
+  margin-bottom: 0.25rem;
+}
+
+.rx-page-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.35rem 0;
+  color: #ffffff;
+}
+
+.rx-page-subtitle {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.rx-glass-card {
+  background: rgba(20, 20, 28, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  padding: 1.5rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.rx-card-header {
+  margin-bottom: 1.25rem;
+}
+
+.rx-section-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #a78bfa;
+  margin: 0 0 0.25rem 0;
+  letter-spacing: -0.01em;
+}
+
+.rx-section-desc {
+  font-size: 0.82rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.rx-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.rx-label-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9ca3af;
+}
+
+.rx-input-row {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+}
+
+.rx-text-input {
+  flex: 1;
+  background: rgba(5, 5, 8, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 0.75rem 0.95rem;
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rx-text-input:focus {
+  border-color: #a78bfa;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+.rx-button-split-group {
+  display: flex;
+  background: rgba(5, 5, 8, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.25rem;
+  border-radius: 10px;
+}
+
+.rx-toggle-btn {
+  background: transparent;
+  color: #9ca3af;
+  border: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.55rem 1.25rem;
+  border-radius: 7px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.rx-toggle-btn.active {
+  background: linear-gradient(180deg, #7c3aed 0%, #6d28d9 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+}
+
+.rx-toggle-btn.secondary.active {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+.rx-segmented-wrapper {
+  display: flex;
+  background: rgba(20, 20, 28, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.3rem;
+  border-radius: 12px;
+  align-self: flex-start;
+}
+
+.rx-segment-tab {
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rx-segment-tab.active {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.rx-grid-deck {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.rx-profile-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 14px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.rx-profile-card:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(167, 139, 250, 0.18);
+}
+
+.rx-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.rx-med-icon-box {
+  width: 40px;
+  height: 40px;
+  background: rgba(124, 58, 237, 0.12);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  color: #a78bfa;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.rx-meta-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.rx-medication-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.rx-status-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.1rem 0.45rem;
+  border-radius: 5px;
+  align-self: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.rx-status-badge.active {
+  background: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  color: #34d399;
+}
+
+.rx-status-badge.inactive {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.rx-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  background: rgba(5, 5, 8, 0.2);
+  padding: 0.85rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.rx-spec-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.rx-spec-box.long {
+  grid-column: span 2;
+}
+
+.rx-spec-box span {
+  font-size: 0.72rem;
+  color: #6b7280;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.rx-spec-box p {
+  font-size: 0.85rem;
+  color: #e5e7eb;
+  margin: 0;
+  font-weight: 500;
+}
+
+.rx-status-feedback {
+  font-size: 0.82rem;
+  font-weight: 500;
+  margin: 1rem 0 0 0;
+}
+.rx-status-feedback.error { color: #f87171; }
+
+.rx-state-alert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.rx-state-alert.error p {
+  color: #f87171;
+}
+
+.rx-empty-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  color: #6b7280;
+  text-align: center;
+  font-size: 0.88rem;
+  font-style: italic;
+}
+
+.rx-loader-spin {
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(167, 139, 250, 0.15);
+  border-top-color: #a78bfa;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  animation: rxSpinCircle 0.85s linear infinite;
+}
+
+@keyframes rxSpinCircle {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .rx-input-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .rx-text-input {
+    width: 100%;
+  }
+  .rx-button-split-group {
+    width: 100%;
+  }
+  .rx-toggle-btn {
+    flex: 1;
+    text-align: center;
+  }
+}
